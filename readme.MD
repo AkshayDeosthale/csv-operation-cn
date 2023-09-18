@@ -2,8 +2,6 @@
 
 Process, view, and analyze CSV files with ease using this tool built with React, Node.js, and other powerful libraries.
 
-![App Screenshot](./path_to_screenshot.png)
-
 ## 🌟 Features
 
 1. 📤 **Upload CSV**: Seamless upload and validation of CSV files.
