@@ -1,37 +1,27 @@
-# CSV File Processor 📊
+# React + TypeScript + Vite
 
-Process, view, and analyze CSV files with ease using this tool built with React, Node.js, and other powerful libraries.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## 🌟 Features
+Currently, two official plugins are available:
 
-1. 📤 **Upload CSV**: Seamless upload and validation of CSV files.
-2. 📄 **View Files**: Access a list of all uploaded CSV files in a clean interface.
-3. 📑 **Dynamic Table**: Display data from any CSV with dynamically generated table headers.
-4. 🔍 **Instant Search**: Real-time search capability for filtering table rows.
-5. ⏫ **Sort Data**: Sort table columns both in ascending and descending orders.
-6. 📄 **Pagination**: Neatly paginated table data, with up to 100 records per page.
-7. 📊 **Visualize Data**: Turn data columns into insightful charts.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## 🔧 Tech Stack
+## Expanding the ESLint configuration
 
-- **Frontend**: React (with TypeScript), AntD
-- **Backend**: Node.js, Multer for file handling, and Mongoose for data modeling.
-- **Visualization**: Recharts for interactive data visualizations.
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-## 🚀 Getting Started
+- Configure the top-level `parserOptions` property like this:
 
-### Prerequisites
+```js
+   parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+   },
+```
 
-- Node.js
-- MongoDB
-- npm/yarn
-
-### Setup & Installation
-
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/AkshayDeosthale/csv-file-processor.git
-   cd csv-file-processor
-   npm run start
-   make sure you have nodemon installed , run npm install -g nodemon
-   ```
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
