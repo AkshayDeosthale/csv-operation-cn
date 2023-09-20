@@ -13,6 +13,7 @@ export interface DocumentStructure {
   updatedAt: Date;
   _id: string;
 }
+const apiUrl = import.meta.env.VITE_API_URL;
 
 function App() {
   const [fileList, setFileList] = useState<UploadFile[]>([]);
@@ -20,7 +21,7 @@ function App() {
 
   const fetchAllDocuments = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/document/");
+      const res = await axios.get(`${apiUrl}/document/`);
       setDocumentList(res.data);
     } catch (error) {
       console.log(error);
@@ -41,7 +42,7 @@ function App() {
     try {
       const formdata = new FormData();
       formdata.append("csvfile", fileList[0] as any);
-      const res = axios.post("http://localhost:3000/document/", formdata);
+      const res = axios.post(`${apiUrl}/document/`, formdata);
       notification.success({
         message: "Document Added",
         description: `Document ${fileList[0].name} uploaded!`,
